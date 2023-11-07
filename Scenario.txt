@@ -1,0 +1,6 @@
+Scenario-based: If an EC2 instance's root disk gets corrupted, how would you troubleshoot without losing data?
+
+You would first stop the instance to prevent further data corruption.
+Create a snapshot of the corrupted root disk to back up the data.
+Launch a new EC2 instance and attach the backed-up snapshot as a new root volume.
+Access the new instance to verify data integrity and perform any necessary repairs.
