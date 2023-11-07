@@ -1,0 +1,18 @@
+Scenario-based: 
+### 1. If an EC2 instance's root disk gets corrupted, how would you troubleshoot without losing data?
+
+--> You would first stop the instance to prevent further data corruption.
+--> Create a snapshot of the corrupted root disk to back up the data.
+--> Launch a new EC2 instance and attach the backed-up snapshot as a new root volume.
+--> Access the new instance to verify data integrity and perform any necessary repairs.
+
+### 2. If you have downloaded the key but still can't login, how will you troubleshoot?
+
+--> Ensure that the key file's permissions are set to be readable only by the owner.
+--> Verify that you are using the correct username and hostname/IP when connecting to the instance.
+--> Check the system logs on the instance for any SSH-related errors or issues.
+--> Ensure that the instance's security group allows SSH traffic from your IP.
+
+### 3. If you have five instances, each with a different hostname, and you want to create a single point of connection, which service would you use to route the traffic?
+
+--> You can use a Load Balancer service, such as Amazon Elastic Load Balancer (ELB) in AWS, to distribute incoming traffic among the instances. It provides high availability and evenly balances the load.
