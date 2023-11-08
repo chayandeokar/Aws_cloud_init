@@ -1,0 +1,26 @@
+version: '3'  # The Compose file version
+
+services:    # List of services/containers in your application
+
+  webapp:    # Service name (you can choose any name)
+    image: nginx:latest  # Docker image to use
+    ports:
+      - "80:80"          # Port mapping (host:container)
+    volumes:
+      - ./webapp:/usr/share/nginx/html  # Mount a volume
+    networks:
+      - my_network
+
+  database:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+    volumes:
+      - pg_data:/var/lib/postgresql/data  # Named volume
+
+volumes:
+  pg_data:  # Named volume definition
+
+networks:
+  my_network:  # Network definition
